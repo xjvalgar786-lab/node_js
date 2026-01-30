@@ -1,0 +1,34 @@
+### /api/obras recupera todas las obras
+GET http://localhost:3000/api/obras
+
+### /api/obras/:id recupera una obra por id
+GET http://localhost:3000/api/obras/1
+
+### /api/obras/ crea una nueva obra
+POST http://localhost:3000/api/obras
+Content-Type: application/json
+
+{
+    "nombre": "Puente del Río Nuevo",
+    "descripcion": "Construcción de un puente peatonal y vehicular",
+    "presupuesto": 3500000.50,
+    "fecha_inicio": "2026-02-01",
+    "finalizada": false,
+    "id_empresa": 1
+}
+
+### /api/obras/:id actualiza una obra
+PUT http://localhost:3000/api/obras/1
+Content-Type: application/json
+
+{
+    "nombre": "Puente Central Renovado",
+    "descripcion": "Renovación de un puente existente",
+    "presupuesto": 2600000.00,
+    "fecha_inicio": "2024-01-15",
+    "finalizada": true,
+    "id_empresa": 1
+}
+
+### /api/obras/:id elimina una obra
+DELETE http://localhost:3000/api/obras/1
