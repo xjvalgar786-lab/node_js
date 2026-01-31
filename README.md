@@ -1,2 +1,3 @@
 # node_js
-Proyecto de node
+Proyecto de node realizado por Jesús Valdivia
+
