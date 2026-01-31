@@ -26,6 +26,14 @@ class ObraService {
     return result;
   }
 
+  async getObrasParametrizado(filtros) {
+    const where = {};
+    if (filtros.finalizada !== undefined) where.finalizada = filtros.finalizada;
+    if (filtros.empresaId !== undefined) where.empresaId = filtros.empresaId;
+    const result = await Obra.findAll({ where });
+    return result;
+  }
+
   async createObra(data) {
     const result = await Obra.create(data);
     return result;

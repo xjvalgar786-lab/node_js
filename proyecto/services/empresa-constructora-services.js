@@ -19,6 +19,12 @@ class EmpresaService {
     });
     return result;
   }
+  async getEmpresasParametrizado(filtros) {
+    const where = {};
+    if (filtros.activa !== undefined) where.activa = filtros.activa;
+    const result = await Empresa.findAll({ where });
+    return result;
+  }
 
   async createEmpresa(data) {
     const result = await Empresa.create(data);

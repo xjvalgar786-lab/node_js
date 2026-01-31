@@ -47,6 +47,27 @@ class EmpresaController {
     }
   }
 
+  async getEmpresasParametrizado(req, res) {
+    const filtros = {
+      activa: req.query.activa !== undefined ? Number(req.query.activa) === 1 : undefined,
+    };
+    try {
+      const empresas = await empresaService.getEmpresasParametrizado(filtros);
+      return res.status(200).json({
+        ok: true,
+        datos: empresas,
+        mensaje: "Empresas recuperadas correctamente",
+      });
+    } catch (err) {
+      console.error("Error en getEmpresasParametrizado:", err);
+      return res.status(500).json({
+        ok: false,
+        datos: null,
+        mensaje: "Error al recuperar empresas",
+      });
+    }
+  }
+
   async createEmpresa(req, res) {
     const data = req.body;
     try {

@@ -4,6 +4,9 @@ GET http://localhost:3000/api/empresas
 ### /api/empresas/:id recupera una empresa por id
 GET http://localhost:3000/api/empresas/1
 
+### /api/empresas/filter recupera empresas con filtros
+GET http://localhost:3000/api/empresas/filter?activa=1
+
 ### /api/empresas/ crea una nueva empresa
 POST http://localhost:3000/api/empresas
 Content-Type: application/json

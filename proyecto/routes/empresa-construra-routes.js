@@ -9,6 +9,9 @@ router.get('/', empresaController.getAllEmpresas);
 // Obtener empresa por ID
 router.get('/:id', empresaController.getEmpresaById);
 
+//listado parametrizado
+router.get('/filter', empresaController.getEmpresasParametrizado);
+
 // Crear empresa
 router.post('/', empresaController.createEmpresa);
 

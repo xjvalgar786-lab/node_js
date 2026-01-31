@@ -2,7 +2,10 @@
 GET http://localhost:3000/api/obras
 
 ### /api/obras/:id recupera una obra por id
-GET http://localhost:3000/api/obras/1
+GET http://localhost:3000/api/obras/3
+
+### /api/obras/filter recupera obras con filtros
+GET http://localhost:3000/api/obras/filter?finalizada=0&empresa
 
 ### /api/obras/ crea una nueva obra
 POST http://localhost:3000/api/obras
@@ -14,7 +17,7 @@ Content-Type: application/json
     "presupuesto": 3500000.50,
     "fecha_inicio": "2026-02-01",
     "finalizada": false,
-    "id_empresa": 1
+    "empresaId": 6
 }
 
 ### /api/obras/:id actualiza una obra
@@ -31,4 +34,4 @@ Content-Type: application/json
 }
 
 ### /api/obras/:id elimina una obra
-DELETE http://localhost:3000/api/obras/1
+DELETE http://localhost:3000/api/obras/3

@@ -51,6 +51,29 @@ class ObraController {
     }
   }
 
+  async getObrasParametrizado(req, res) {
+    const filtros = {
+      finalizada: req.query.finalizada !== undefined ? req.query.finalizada === 'true' : undefined, 
+      empresaId: req.query.empresaId ? parseInt(req.query.empresaId) : undefined,
+    };
+    try {
+      const obras = await obraService.getAllObras(filtros);
+      return res.status(200).json({
+        ok: true,
+        datos: obras,
+        mensaje: "Obras recuperadas correctamente",
+      });
+    }
+    catch (err) {
+      console.error("Error en getObrasParametrizado:", err);
+      return res.status(500).json({
+        ok: false,
+        datos: null,
+        mensaje: "Error al recuperar obras",
+      });
+    }
+  }
+
   async createObra(req, res) {
     const data = req.body;
     try {
