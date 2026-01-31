@@ -17,7 +17,7 @@ Content-Type: application/json
     "presupuesto": 3500000.50,
     "fecha_inicio": "2026-02-01",
     "finalizada": false,
-    "empresaId": 6
+    "empresaId": 1
 }
 
 ### /api/obras/:id actualiza una obra
